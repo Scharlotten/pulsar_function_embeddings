@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulsar-producer-wiki
+  namespace: applications
+  labels:
+    app: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python  
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: pulsar-producer
+        image: asemjen/wiki-pulsar-producer:latest

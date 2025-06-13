@@ -1,0 +1,16 @@
+For building the code: pip download -d ./deps -r requirements.txt --only-binary=:all: --platform manylinux2014_x86_64
+For creating the topics if for whatever reason the Pulsar brokers need to be replaced
+
+1. Create the tenant
+bin/pulsar-admin tenants create apache
+
+
+2. Create the namespaces
+bin/pulsar-admin namespaces create apache/pulsar
+
+3. Create the source topic
+bin/pulsar-admin topics create-partitioned-topic apache/pulsar/wiki-topic -p 3
+
+4. Set retention on namespaces
+
+bin/pulsar-admin functions create --function-config-file=/mnt/c/Users/Anna/CodeProjects/pulsar-producer/create-config.yaml --cpu=0.2 --ram=400000000

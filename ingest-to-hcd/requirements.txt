@@ -1,0 +1,6 @@
+# pip install -r requirements.txt
+requests
+pulsar-client==2.10
+python-dotenv
+openai
+astrapy

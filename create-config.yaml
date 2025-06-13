@@ -1,0 +1,21 @@
+tenant: apache
+namespace: pulsar
+name: ingest-to-hcd-function
+# Update to the absolute path of the function's package
+py: /mnt/c/Users/Anna/CodeProjects/pulsar-producer/ingest-to-hcd.zip
+# className convention: filename.classname
+className: ingest-to-hcd.IngestToHcdFunction
+cpu: 0.2
+ram: 400000000
+parallelism: 1
+inputs:
+ - persistent://apache/pulsar/wiki-topic
+autoAck: true
+
+logTopic: persistent://apache/pulsar/wiki-log-topic
+userConfig:
+  hcd_endpoint: http://hcd-dc-1-data-api-np.demo-z5348r3n.svc.cluster.local:8181
+  hcd_token: hcd-token
+  collection: wiki_data
+  logging_level: ERROR
+  api_key: api-key
