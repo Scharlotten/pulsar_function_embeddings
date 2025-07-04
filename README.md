@@ -70,7 +70,7 @@ Deploy your function with resource specifications:
 
 ```bash
 bin/pulsar-admin functions create \
-  --function-config-file=~/CodeProjects/pulsar-producer/create-config.yaml \
+  --function-config-file=~/CodeProjects/pulsar-function/create-config.yaml \
   --cpu=0.2 \
   --ram=400000000
 ```
@@ -81,7 +81,7 @@ If you need to modify an existing function:
 
 ```bash
 bin/pulsar-admin functions update \
-  --function-config-file=~/CodeProjects/pulsar-producer/create-config.yaml \
+  --function-config-file=~/CodeProjects/pulsar-function/create-config.yaml \
   --cpu=0.2 \
   --ram=400000000
 ```
