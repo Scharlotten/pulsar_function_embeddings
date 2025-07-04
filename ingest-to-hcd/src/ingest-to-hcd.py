@@ -29,7 +29,7 @@ class IngestToHcdFunction(Function):
         namespace = "default_namespace"
         try:
             # Initialize the client and get a "Database" object
-            openai_client = OpenAI(api_key="api-key")
+            openai_client = OpenAI(api_key=context.get_user_config_value("api_key"))
             client = DataAPIClient(environment=Environment.HCD)
             database = client.get_database(context.get_user_config_value('hcd_endpoint'), token=context.get_user_config_value('hcd_token'))
             database.use_keyspace(namespace)
